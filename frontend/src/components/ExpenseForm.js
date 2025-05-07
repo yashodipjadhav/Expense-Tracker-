@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const ExpenseForm = ({ onSubmit, editingExpense }) => {
-  const [form, setForm] = useState({ title: '', amount: '', date: '', category: '' });
+  const [form, setForm] = useState({ title: '',subtitle:'', amount: '', date: '', category: '' });
 
   useEffect(() => {
     if (editingExpense) {
@@ -23,6 +23,7 @@ const ExpenseForm = ({ onSubmit, editingExpense }) => {
   return (
     <form onSubmit={handleSubmit}>
       <input name="title" placeholder="Title" value={form.title} onChange={handleChange} />
+      <input name="sub-title" placeholder="Sub-itle" value={form.subtitle} onChange={handleChange} />
       <input name="amount" type="number" placeholder="Amount" value={form.amount} onChange={handleChange} />
       <input name="date" type="date" value={form.date} onChange={handleChange} />
       <select name="category" value={form.category} onChange={handleChange}>
